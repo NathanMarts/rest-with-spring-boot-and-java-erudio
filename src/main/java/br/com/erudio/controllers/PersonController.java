@@ -15,19 +15,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.erudio.data.vo.v1.PersonVO;
-import br.com.erudio.data.vo.v2.PersonVOV2;
 import br.com.erudio.services.PersonServices;
-import br.com.erudio.services.PersonServicesV2;
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("/api/person/v1")
 public class PersonController {
 
   @Autowired
   private PersonServices personService;
-
-  @Autowired
-  private PersonServicesV2 personServicesV2;
 
   @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
   public List<PersonVO> findAll() {
