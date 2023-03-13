@@ -22,7 +22,7 @@ public class PersonServices {
   public List<PersonVO> findAll() {
     logger.info("Finding all people.");
 
-    return DozerMapper.parseListObject(personRepository.findAll(), PersonVO.class);
+    return DozerMapper.parseListObjects(personRepository.findAll(), PersonVO.class);
   }
 
   public PersonVO findById(Long id) {
@@ -43,7 +43,7 @@ public class PersonServices {
   public PersonVO update(PersonVO person) {
     logger.info("Updating one person!");
 
-    var entity = personRepository.findById(person.getId())
+    var entity = personRepository.findById(person.getKey())
         .orElseThrow(() -> new ResouceNotFoundException("No records found for this ID"));
 
     entity.setFirstName(person.getFirstName());

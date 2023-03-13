@@ -16,15 +16,29 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.erudio.data.vo.v1.PersonVO;
 import br.com.erudio.services.PersonServices;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/api/person/v1")
+@Tag(name = "People", description = "Endpoints for Managing People")
 public class PersonController {
 
   @Autowired
   private PersonServices personService;
 
   @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+  @Operation(summary = "Finds all People", description = "Finds all People", tags = { "People" }, responses = {
+      @ApiResponse(description = "Success", responseCode = "200", content = {
+        @Content(
+          mediaType = "application/json",
+          array = @ArraySchema(schema = @Schema(implementation = PersonVO.class))
+        )})
+  })
   public List<PersonVO> findAll() {
     return personService.findAll();
   }

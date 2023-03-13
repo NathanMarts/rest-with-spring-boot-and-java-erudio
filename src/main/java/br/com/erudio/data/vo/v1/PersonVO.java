@@ -3,11 +3,16 @@ package br.com.erudio.data.vo.v1;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class PersonVO implements Serializable {
+import org.springframework.hateoas.RepresentationModel;
+
+import com.github.dozermapper.core.Mapping;
+
+public class PersonVO extends RepresentationModel<PersonVO> implements Serializable {
   
   private static final long serialVersionUID = 1L;
 
-  private Long id;
+  @Mapping("id")
+  private Long key;
   private String firstName;
   private String lastName;
   private String address;
@@ -16,12 +21,12 @@ public class PersonVO implements Serializable {
   public PersonVO() {
   }
 
-  public Long getId() {
-    return this.id;
+  public Long getKey() {
+    return this.key;
   }
 
-  public void setId(Long id) {
-    this.id = id;
+  public void setKey(Long key) {
+    this.key = key;
   }
 
   public String getFirstName() {
@@ -64,12 +69,12 @@ public class PersonVO implements Serializable {
             return false;
         }
         PersonVO person = (PersonVO) o;
-        return id == person.id && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(address, person.address) && Objects.equals(gender, person.gender);
+        return key == person.key && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(address, person.address) && Objects.equals(gender, person.gender);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, lastName, address, gender);
+    return Objects.hash(key, firstName, lastName, address, gender);
   }
 
 }
