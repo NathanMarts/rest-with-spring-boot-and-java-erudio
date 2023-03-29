@@ -9,7 +9,7 @@ import br.com.erudio.data.vo.v2.BookVO;
 import br.com.erudio.exceptions.RequiredObjectIsNullException;
 import br.com.erudio.exceptions.ResouceNotFoundException;
 import br.com.erudio.mapper.DozerMapper;
-import br.com.erudio.models.Book;
+import br.com.erudio.model.Book;
 import br.com.erudio.repositories.BookRepository;
 
 import java.util.List;
@@ -25,7 +25,7 @@ public class BookServices {
   private BookRepository bookRepository;
 
   public List<BookVO> findAll() {
-    logger.info("Finding all people.");
+    logger.info("Finding all books.");
 
     var books = DozerMapper.parseListObjects(bookRepository.findAll(), BookVO.class);
     books.stream().forEach(p -> p.add(linkTo(methodOn(BookController.class).findById(p.getKey())).withSelfRel()));

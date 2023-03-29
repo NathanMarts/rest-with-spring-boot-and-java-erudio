@@ -9,8 +9,7 @@ import br.com.erudio.data.vo.v2.PersonVOV2;
 import br.com.erudio.exceptions.RequiredObjectIsNullException;
 import br.com.erudio.exceptions.ResouceNotFoundException;
 import br.com.erudio.mapper.DozerMapper;
-import br.com.erudio.mapper.custom.PersonMapper;
-import br.com.erudio.models.Person;
+import br.com.erudio.model.Person;
 import br.com.erudio.repositories.PersonRepository;
 
 import java.util.List;
@@ -24,9 +23,6 @@ public class PersonServicesV2 {
 
   @Autowired
   private PersonRepository personRepository;
-
-  @Autowired
-  private PersonMapper personMapper;
 
   public List<PersonVOV2> findAll() {
     logger.info("Finding all people.");

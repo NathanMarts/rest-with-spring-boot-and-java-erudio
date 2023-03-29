@@ -1,4 +1,4 @@
-package br.com.erudio.models;
+package br.com.erudio.model;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -14,7 +14,7 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 @Entity
-@Table(name = "book")
+@Table(name = "books")
 public class Book implements Serializable {
   private static final long serialVersionUID = 1L;
 

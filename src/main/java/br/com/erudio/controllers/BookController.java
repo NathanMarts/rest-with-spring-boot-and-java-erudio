@@ -18,7 +18,7 @@ import br.com.erudio.services.BookServices;
 import br.com.erudio.util.MediaType;
 
 @RestController
-@RequestMapping("/book/v2")
+@RequestMapping("/api/book/v1")
 public class BookController {
 
   @Autowired

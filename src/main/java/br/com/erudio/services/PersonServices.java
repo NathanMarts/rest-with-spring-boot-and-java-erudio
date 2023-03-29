@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import br.com.erudio.data.vo.v1.PersonVO;
 import br.com.erudio.exceptions.ResouceNotFoundException;
 import br.com.erudio.mapper.DozerMapper;
-import br.com.erudio.models.Person;
+import br.com.erudio.model.Person;
 import br.com.erudio.repositories.PersonRepository;
 
 @Service

@@ -18,7 +18,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import br.com.erudio.data.vo.v2.BookVO;
 import br.com.erudio.exceptions.RequiredObjectIsNullException;
-import br.com.erudio.models.Book;
+import br.com.erudio.model.Book;
 import br.com.erudio.repositories.BookRepository;
 import br.com.erudio.services.BookServices;
 import br.com.erudio.unittests.mapper.mocks.MockBook;
@@ -56,7 +56,7 @@ class BookServicesTest {
 		assertNotNull(bookOne);
 		assertNotNull(bookOne.getKey());
 		assertNotNull(bookOne.getLinks());
-		assertTrue(bookOne.toString().contains("links: [</book/v2/1>;rel=\"self\"]"));
+		assertTrue(bookOne.toString().contains("links: [</book/v1/1>;rel=\"self\"]"));
 		assertEquals("Some Author1", bookOne.getAuthor());
 		assertEquals("Some Title1", bookOne.getTitle());
 		assertEquals(25D, bookOne.getPrice());
@@ -67,7 +67,7 @@ class BookServicesTest {
 		assertNotNull(bookFour);
 		assertNotNull(bookFour.getKey());
 		assertNotNull(bookFour.getLinks());
-		assertTrue(bookFour.toString().contains("links: [</book/v2/4>;rel=\"self\"]"));
+		assertTrue(bookFour.toString().contains("links: [</book/v1/4>;rel=\"self\"]"));
 		assertEquals("Some Author4", bookFour.getAuthor());
 		assertEquals("Some Title4", bookFour.getTitle());
 		assertEquals(25D, bookFour.getPrice());
@@ -78,7 +78,7 @@ class BookServicesTest {
 		assertNotNull(bookSeven);
 		assertNotNull(bookSeven.getKey());
 		assertNotNull(bookSeven.getLinks());
-		assertTrue(bookSeven.toString().contains("links: [</book/v2/7>;rel=\"self\"]"));
+		assertTrue(bookSeven.toString().contains("links: [</book/v1/7>;rel=\"self\"]"));
 		assertEquals("Some Author7", bookSeven.getAuthor());
 		assertEquals("Some Title7", bookSeven.getTitle());
 		assertEquals(25D, bookSeven.getPrice());
@@ -97,7 +97,7 @@ class BookServicesTest {
 		assertNotNull(result);
 		assertNotNull(result.getKey());
 		assertNotNull(result.getLinks());
-		assertTrue(result.toString().contains("links: [</book/v2/1>;rel=\"self\"]"));
+		assertTrue(result.toString().contains("links: [</book/v1/1>;rel=\"self\"]"));
 		assertEquals("Some Author1", result.getAuthor());
 		assertEquals("Some Title1", result.getTitle());
 		assertEquals(25D, result.getPrice());
@@ -120,7 +120,7 @@ class BookServicesTest {
 		assertNotNull(result);
 		assertNotNull(result.getKey());
 		assertNotNull(result.getLinks());
-		assertTrue(result.toString().contains("links: [</book/v2/1>;rel=\"self\"]"));
+		assertTrue(result.toString().contains("links: [</book/v1/1>;rel=\"self\"]"));
 		assertEquals("Some Author1", result.getAuthor());
 		assertEquals("Some Title1", result.getTitle());
 		assertEquals(25D, result.getPrice());
@@ -157,7 +157,7 @@ class BookServicesTest {
 		assertNotNull(result);
 		assertNotNull(result.getKey());
 		assertNotNull(result.getLinks());
-		assertTrue(result.toString().contains("links: [</book/v2/1>;rel=\"self\"]"));
+		assertTrue(result.toString().contains("links: [</book/v1/1>;rel=\"self\"]"));
 		assertEquals("Some Author1", result.getAuthor());
 		assertEquals("Some Title1", result.getTitle());
 		assertEquals(25D, result.getPrice());

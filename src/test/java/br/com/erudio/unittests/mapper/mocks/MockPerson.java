@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import br.com.erudio.data.vo.v2.PersonVOV2;
-import br.com.erudio.models.Person;
+import br.com.erudio.model.Person;
 
 
 public class MockPerson {

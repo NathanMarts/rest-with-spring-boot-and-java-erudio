@@ -5,7 +5,7 @@ import java.util.Date;
 import org.springframework.stereotype.Service;
 
 import br.com.erudio.data.vo.v2.PersonVOV2;
-import br.com.erudio.models.Person;
+import br.com.erudio.model.Person;
 
 @Service
 public class PersonMapper {
