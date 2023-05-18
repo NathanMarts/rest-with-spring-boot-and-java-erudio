@@ -2,96 +2,135 @@ package br.com.erudio.data.vo.v1.security;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Objects;
 
-public class TokenVO implements Serializable {
-  private static final long serialVersionUID = 1L;
+public class TokenVO implements Serializable{
 
-  private String username;
-  private Boolean authenticated;
-  private Date created;
-  private Date expiration;
-  private String accessToken;
-  private String refreshToken;
+	private static final long serialVersionUID = 1L;
+	
+	private String username;
+	private Boolean authenticated;
+	private Date created;
+	private Date expiration;
+	private String accessToken;
+	private String refreshToken;
+	
+	public TokenVO() {}
+	
+	public TokenVO(
+			String username,
+			Boolean authenticated,
+			Date created,
+			Date expiration,
+			String accessToken,
+			String refreshToken) {
+		this.username = username;
+		this.authenticated = authenticated;
+		this.created = created;
+		this.expiration = expiration;
+		this.accessToken = accessToken;
+		this.refreshToken = refreshToken;
+	}
 
-  public TokenVO() {
-  }
+	public String getUsername() {
+		return username;
+	}
 
-  public TokenVO(String username, Boolean authenticated, Date created, Date expiration, String accessToken, String refreshToken) {
-    this.username = username;
-    this.authenticated = authenticated;
-    this.created = created;
-    this.expiration = expiration;
-    this.accessToken = accessToken;
-    this.refreshToken = refreshToken;
-  }
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-  public String getUsername() {
-    return this.username;
-  }
+	public Boolean getAuthenticated() {
+		return authenticated;
+	}
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
+	public void setAuthenticated(Boolean authenticated) {
+		this.authenticated = authenticated;
+	}
 
-  public Boolean isAuthenticated() {
-    return this.authenticated;
-  }
+	public Date getCreated() {
+		return created;
+	}
 
-  public Boolean getAuthenticated() {
-    return this.authenticated;
-  }
+	public void setCreated(Date created) {
+		this.created = created;
+	}
 
-  public void setAuthenticated(Boolean authenticated) {
-    this.authenticated = authenticated;
-  }
+	public Date getExpiration() {
+		return expiration;
+	}
 
-  public Date getCreated() {
-    return this.created;
-  }
+	public void setExpiration(Date expiration) {
+		this.expiration = expiration;
+	}
 
-  public void setCreated(Date created) {
-    this.created = created;
-  }
+	public String getAccessToken() {
+		return accessToken;
+	}
 
-  public Date getExpiration() {
-    return this.expiration;
-  }
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
+	}
 
-  public void setExpiration(Date expiration) {
-    this.expiration = expiration;
-  }
+	public String getRefreshToken() {
+		return refreshToken;
+	}
 
-  public String getAccessToken() {
-    return this.accessToken;
-  }
+	public void setRefreshToken(String refreshToken) {
+		this.refreshToken = refreshToken;
+	}
 
-  public void setAccessToken(String accessToken) {
-    this.accessToken = accessToken;
-  }
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((accessToken == null) ? 0 : accessToken.hashCode());
+		result = prime * result + ((authenticated == null) ? 0 : authenticated.hashCode());
+		result = prime * result + ((created == null) ? 0 : created.hashCode());
+		result = prime * result + ((expiration == null) ? 0 : expiration.hashCode());
+		result = prime * result + ((refreshToken == null) ? 0 : refreshToken.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
+		return result;
+	}
 
-  public String getRefreshToken() {
-    return this.refreshToken;
-  }
-
-  public void setRefreshToken(String refreshToken) {
-    this.refreshToken = refreshToken;
-  }
-
-  @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof TokenVO)) {
-            return false;
-        }
-        TokenVO tokenVO = (TokenVO) o;
-        return Objects.equals(username, tokenVO.username) && Objects.equals(authenticated, tokenVO.authenticated) && Objects.equals(created, tokenVO.created) && Objects.equals(expiration, tokenVO.expiration) && Objects.equals(accessToken, tokenVO.accessToken) && Objects.equals(refreshToken, tokenVO.refreshToken);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(username, authenticated, created, expiration, accessToken, refreshToken);
-  }
-
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		TokenVO other = (TokenVO) obj;
+		if (accessToken == null) {
+			if (other.accessToken != null)
+				return false;
+		} else if (!accessToken.equals(other.accessToken))
+			return false;
+		if (authenticated == null) {
+			if (other.authenticated != null)
+				return false;
+		} else if (!authenticated.equals(other.authenticated))
+			return false;
+		if (created == null) {
+			if (other.created != null)
+				return false;
+		} else if (!created.equals(other.created))
+			return false;
+		if (expiration == null) {
+			if (other.expiration != null)
+				return false;
+		} else if (!expiration.equals(other.expiration))
+			return false;
+		if (refreshToken == null) {
+			if (other.refreshToken != null)
+				return false;
+		} else if (!refreshToken.equals(other.refreshToken))
+			return false;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
+			return false;
+		return true;
+	}
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import br.com.erudio.data.vo.v2.BookVO;
+import br.com.erudio.data.vo.v1.BookVO;
 import br.com.erudio.model.Book;
 
 public class MockBook {

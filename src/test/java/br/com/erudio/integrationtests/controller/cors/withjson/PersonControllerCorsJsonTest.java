@@ -95,13 +95,13 @@ public class PersonControllerCorsJsonTest extends AbstractIntegrationTest {
 		
 		assertNotNull(persistedPerson);
 		
-		assertNotNull(persistedPerson.getKey());
+		assertNotNull(persistedPerson.getId());
 		assertNotNull(persistedPerson.getFirstName());
 		assertNotNull(persistedPerson.getLastName());
 		assertNotNull(persistedPerson.getAddress());
 		assertNotNull(persistedPerson.getGender());
 		
-		assertTrue(persistedPerson.getKey() > 0);
+		assertTrue(persistedPerson.getId() > 0);
 		
 		assertEquals("Richard", persistedPerson.getFirstName());
 		assertEquals("Stallman", persistedPerson.getLastName());
@@ -138,7 +138,7 @@ public class PersonControllerCorsJsonTest extends AbstractIntegrationTest {
 		var content = given().spec(specification)
 				.contentType(TestConfigs.CONTENT_TYPE_JSON)
 					.header(TestConfigs.HEADER_PARAM_ORIGIN, TestConfigs.ORIGIN_ERUDIO)
-					.pathParam("id", person.getKey())
+					.pathParam("id", person.getId())
 					.when()
 					.get("{id}")
 				.then()
@@ -152,13 +152,13 @@ public class PersonControllerCorsJsonTest extends AbstractIntegrationTest {
 		
 		assertNotNull(persistedPerson);
 		
-		assertNotNull(persistedPerson.getKey());
+		assertNotNull(persistedPerson.getId());
 		assertNotNull(persistedPerson.getFirstName());
 		assertNotNull(persistedPerson.getLastName());
 		assertNotNull(persistedPerson.getAddress());
 		assertNotNull(persistedPerson.getGender());
 		
-		assertTrue(persistedPerson.getKey() > 0);
+		assertTrue(persistedPerson.getId() > 0);
 		
 		assertEquals("Richard", persistedPerson.getFirstName());
 		assertEquals("Stallman", persistedPerson.getLastName());
@@ -175,7 +175,7 @@ public class PersonControllerCorsJsonTest extends AbstractIntegrationTest {
 		var content = given().spec(specification)
 				.contentType(TestConfigs.CONTENT_TYPE_JSON)
 					.header(TestConfigs.HEADER_PARAM_ORIGIN, TestConfigs.ORIGIN_SEMERU)
-					.pathParam("id", person.getKey())
+					.pathParam("id", person.getId())
 					.when()
 					.get("{id}")
 				.then()
@@ -194,6 +194,7 @@ public class PersonControllerCorsJsonTest extends AbstractIntegrationTest {
 		person.setLastName("Stallman");
 		person.setAddress("New York City, New York, US");
 		person.setGender("Male");
+		person.setEnabled(true);
 	}
 
 }

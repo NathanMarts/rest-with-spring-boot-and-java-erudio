@@ -52,7 +52,7 @@ public class AuthControllerXmlTest extends AbstractIntegrationTest {
 	public void testRefresh() throws JsonMappingException, JsonProcessingException {
 		
 		var newTokenVO = given()
-				.basePath("/auth/refreshToken")
+				.basePath("/auth/refresh")
 				.port(TestConfigs.SERVER_PORT)
 				.contentType(TestConfigs.CONTENT_TYPE_XML)
 					.pathParam("username", tokenVO.getUsername())

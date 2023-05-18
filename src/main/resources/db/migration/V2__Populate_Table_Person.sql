@@ -1,8 +1,8 @@
 INSERT INTO `person` (`id`, `address`, `first_name`, `gender`, `last_name`) VALUES
-	(1, 'Rua dos Ipês, 3, Carlos Sampaio', 'Nathan', 'Male', 'Martins'),
-	(2, 'Rua dos Ipês, 3, Carlos Sampaio', 'Nathan', 'Male', 'Martins'),
-	(3, 'Rua dos Ipês, 3, Carlos Sampaio', 'Nathan', 'Male', 'Martins'),
-	(5, 'Rua dos Ipês, 3, Carlos Sampaio', 'Nathan', 'Male', 'Martins'),
-	(6, 'Rua dos Ipês, 3, Carlos Sampaio', 'Martins', 'Male', 'Martins'),
-	(7, 'Rua dos Ipês, 3, Carlos Sampaio', 'Martins', 'Male', 'Martins'),
-	(8, 'Rua dos Ipês, 3, Carlos Sampaio', 'Nathan 2', 'Male', 'Martins');
+	(1, 'São Paulo', 'Ayrton', 'Male', 'Senna'),
+	(2, 'Anchiano - Italy', 'Leonardo', 'Male', 'da Vinci'),
+	(4, 'Porbandar - India', 'Indira', 'Female', 'Gandhi'),
+	(5, 'Porbandar - India', 'Mahatma', 'Male', 'Gandhi'),
+	(7, 'Kentucky - US', 'Muhammad', 'Male', 'Ali'),
+	(9, 'Mvezo – South Africa', 'Nelson', 'Male', 'Mvezo'),
+	(10, 'Smiljan - Croácia', 'Nikola', 'Male', 'Tesla');
